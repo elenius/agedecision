@@ -1,0 +1,5 @@
+# Binaries #
+*.rda binary
+*.rds binary
+*.png binary
+*.jpg binary
