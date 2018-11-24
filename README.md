@@ -1,4 +1,4 @@
-Bilaga: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen
+Bilaga: agedecision
 ================
 Mikael Elenius
 2018-11-24
@@ -6,10 +6,14 @@ Mikael Elenius
 Introduktion
 ============
 
-Detta R-paket utgör en bilaga till uppsatsen [M. Elenius (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://www.diva-portal.org/)
+Detta R-paket utgör en bilaga till uppsatsen:
+
+[M. Elenius (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://www.diva-portal.org/)
 
 Installation
 ============
+
+Observera ifall du använder Windows behöver du ha installerat [Rtools](https://cran.r-project.org/bin/windows/Rtools/).
 
 ``` r
 if (!require("devtools")) {
@@ -23,7 +27,7 @@ library(agedecision)
 Resultat
 ========
 
-Specificitet och sensitivitet ges av (i åldersintevallet 15 till 21 år):
+Specificitet och sensitivitet i åldersintervallet från 15 till 21 år ges av:
 
 ``` r
 library(agedecision)
@@ -40,10 +44,10 @@ spec_sens_all(age.min = 15, age.max = 21)
 9        Vuxen   0.0000000   1.0000000
 ```
 
-Andel som klassificeras som vuxna, både korrekt och felaktigt för samtliga metoder då prevalensen varieras från 0 till 1 i skalsteg om 0.01. Dessutom anges accuracy (andel korrekt klassificerade). Även specificitet och sensitivitet anges, även om dessa är oberoende av prevalensen.
+Andel som klassificeras som vuxna, både korrekt och felaktigt för samtliga metoder då prevalensen varieras från 0 till 1 i skalsteg om 0.01. Dessutom anges accuracy (andel korrekt klassificerade). Även specificitet och sensitivitet anges, även om dessa är oberoende av prevalensen. Åldersintervallet anges även här från 15 till 21 år.
 
 ``` r
-dat <- classified_adults(by = 0.01)
+dat <- classified_adults(by = 0.01, age.min = 15, age.max = 21)
 
 # Resultat prevalens = 0.84
 print.data.frame(subset(dat, prevalence == 0.84), row.names = FALSE)
@@ -72,9 +76,9 @@ print.data.frame(subset(dat, prevalence == 0.84), row.names = FALSE)
 Beräkning av samtliga förväntade nyttor då nyttan för en felklassificerad vuxen och prevalensen varieras från 0 till 1 i skalsteg om 0.01, vilket ger upphov till 10 201 kombinationer för varje metod (9 st) och nyttofunktioner (2 st), vilket ger upphov till 183 618 olika resultat. Beräkningarna tar här ungefär en halv minut att utföra.
 
 ``` r
-system.time(resultat <- eu_all_comb(by = 0.01))
+system.time(resultat <- eu_all_comb(by = 0.01, age.min = 15, age.max = 21))
    user  system elapsed 
- 36.654   0.350  38.212 
+ 34.319   0.278  35.302 
 
 # Antal rader = 10201 * 9 * 2
 format(nrow(resultat), big.mark = " ")
@@ -116,10 +120,12 @@ Se dokumentationen för dataset och funktioner med hjälp av `?`
 ?kna # data för knäled
 ?logcoef # samtliga regressionskoefficienter
 
-# Sannolikhetsfunktion
+# Täthetsfunktion (två likformiga fördelningar)
+?dunif2
+
+# Sannolikhetsfunktioner
 ?logistic_function # logistisk funktion
 ?logistic_center # ger den centrerade åldern av en logistisk funktion
-?dunif2 # täthetsfunktion
 ?pM # listar samtliga sannolikhetsfunktioner
 
 # Nyttofunktioner
