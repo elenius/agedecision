@@ -151,16 +151,14 @@ Exempel regressionsanalys
 Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `?logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled. Se också [data-raw/datasets.R](data-raw/datasets.R) där datainläsning och regressionsanalyser görs för samtliga metoder.
 
 ``` r
-# Visdomstand
-mod.tand <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
-                data = tand)
+# Visdomstand (Simonsson m. fl. (2017))
+mod.tand <- glm(formula = cbind(moget, omoget) ~ age, family = binomial, data = tand)
 coef(mod.tand)
 (Intercept)         age 
  -19.903828    1.087887 
 
-# Knäled
-mod.kna <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
-                data = kna)
+# Knäled (Krämer m. fl. (2014), Saint-Martin m. fl. (2015))
+mod.kna <- glm(formula = cbind(moget, omoget) ~ age, family = binomial, data = kna)
 coef(mod.kna)
 (Intercept)         age 
  -26.707824    1.370405 
