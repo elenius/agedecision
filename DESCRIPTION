@@ -9,4 +9,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
-URL: http://github.com/elenius/agedecision, http://www.diva-portal.org/
+URL: http://elenius.github.io/agedecision/, http://www.diva-portal.org/
