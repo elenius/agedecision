@@ -7,7 +7,7 @@
 dunif2(x, min = 15, max = 21, prevalence = 0.84)
 }
 \arguments{
-\item{x}{age.}
+\item{x}{Ålder.}
 
 \item{min}{Lägsta ålder för barn, måste vara 18 år eller under. Förvalt är 15 år.}
 
