@@ -4,7 +4,7 @@
 \alias{eu_all_comb}
 \title{Förväntad nytta för alla alternativ/metoder för alla kombinationer.}
 \usage{
-eu_all_comb(by = 0.1)
+eu_all_comb(by = 0.1, age.min = 15, age.max = 21)
 }
 \arguments{
 \item{by}{Minsta steg mellan 0 och 1.}

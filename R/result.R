@@ -108,16 +108,14 @@ eu_all <- function(
 #' @param by Minsta steg mellan 0 och 1.
 #'
 #' @export
-eu_all_comb <- function(by = 0.1) {
+eu_all_comb <- function(by = 0.1, age.min = 15, age.max = 21) {
   prevalence <- seq(0, 1, by = by)
   lowest.utility <- seq(0, 1, by = by)
-
-  # method.umod <- names(eu_all(lowest.utility = 0, prevalence = 0.5))
 
   res <-
     lapply(prevalence, function(prev) {
       res <- lapply(lowest.utility, function(util) {
-        cbind(eu_all(lowest.utility = util, prevalence = prev), prevalence = prev, uvo = util)
+        cbind(eu_all(lowest.utility = util, prevalence = prev, age.min = age.min, age.max = age.max), prevalence = prev, uvo = util)
       })
       do.call(rbind, res)
     })
