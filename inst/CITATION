@@ -1,0 +1,9 @@
+citEntry(
+  entry = 'MastersThesis',
+  title = "{Beslutsanalys av medicinska åldersbedömningar inom asylprocessen}",
+  author = "Mikael Elenius",
+  year = 2018,
+  school = "{Högskolan i Gävle}",
+  url = "https://github.com/elenius/agedecision",
+  textVersion = "Mikael Elenius (2018). Beslutsanalys av medicinska åldersbedömningar inom asylprocessen. Magisteruppsats i Beslut-, risk- och policyanalys. Högskolan i Gävle."
+)

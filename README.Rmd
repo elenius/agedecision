@@ -1,0 +1,136 @@
+---
+title: "Bilaga: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen"
+author: "Mikael Elenius"
+date: "`r Sys.Date()`"
+output: rmarkdown::github_document
+vignette: >
+  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
+  %\VignetteIndexEntry{Bilaga: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Introduktion
+
+Detta R-paket utgör en bilaga till uppsatsen *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen* (2018).
+
+# Installation
+
+```{r, eval = FALSE}
+if (!require("devtools")) {
+  install.packages("devtools")
+}
+devtools::install_github("elenius/agedecision", dependencies = TRUE)
+
+library(agedecision)
+
+```
+
+
+# Resultat
+
+Specificitet och sensitivitet ges av (i åldersintevallet 15 till 21 år):
+
+```{r specsens}
+library(agedecision)
+spec_sens_all(age.min = 15, age.max = 21)
+
+```
+
+Andel som klassificeras som vuxna, både korrekt och felaktigt för samtliga metoder då prevalensen varieras från 0 till 1 i skalsteg om 0.01. Dessutom anges accuracy (andel korrekt klassificerade). Även specificitet och sensitivitet anges, även om dessa är oberoende av prevalensen.
+
+```{r adults}
+dat <- classified_adults(by = 0.01)
+
+# Resultat prevalens = 0.84
+print.data.frame(subset(dat, prevalence == 0.84), row.names = FALSE)
+
+```
+
+Beräkning av samtliga förväntade nyttor då nyttan för en felklassificerad vuxen och prevalensen varieras från 0 till 1 i skalsteg om 0.01, vilket ger upphov till 10 201 kombinationer för varje metod (9 st) och nyttofunktioner (2 st), vilket ger upphov till 183 618 olika resultat. Beräkningen tar här 36 sekunder att utföra.
+
+```{r eu, cache=TRUE}
+system.time(resultat <- eu_all_comb(by = 0.01))
+
+# Antal rader = 10201 * 9 * 2
+format(nrow(resultat), big.mark = " ")
+
+# Resultat då Uvo = 0.5 och prevalens = 0.84
+print.data.frame(subset(resultat, uvo == 0.5 & prevalence == 0.84), row.names = FALSE)
+
+```
+
+# Funktioner och dataset
+
+Se dokumentationen för dataset och funktioner med hjälp av `?`
+
+```{r, eval = FALSE}
+
+# Dataset
+?tand # data för visdomstand
+?hand # data för handled
+?kna # data för knäled
+?logcoef # samtliga regressionskoefficienter
+
+# Sannolikhetsfunktion
+?logistic_function # logistisk funktion
+?logistic_center # ger den centrerade åldern av en logistisk funktion
+?dunif2 # täthetsfunktion
+?pM # listar samtliga sannolikhetsfunktioner
+
+# Nyttofunktioner
+?utility_discrete_adult 
+?utility_discrete_child
+?utility_linear_adult
+?utility_linear_child
+
+# Förväntad nytta
+?eu_i
+?eu_all
+?eu_all_comb
+
+# Resultat specificitet, sensitivitet, accuracy, andel klassificerade vuxna
+?spec_sens
+?spec_sens_all
+?classified_adults
+
+
+```
+
+# Exempel regressionsanalys
+
+Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled.
+
+```{r logreg}
+# Visdomstand
+mod.tand <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
+                data = tand)
+summary(mod.tand)
+
+# Knäled
+mod.kna <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
+                data = kna)
+summary(mod.kna)
+
+```
+
+
+# Referens
+
+```{r referens}
+citation("agedecision")
+
+```
+
+
+
+
