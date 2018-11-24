@@ -69,7 +69,7 @@ print.data.frame(subset(dat, prevalence == 0.84), row.names = FALSE)
 #>          1.0000000
 ```
 
-Beräkning av samtliga förväntade nyttor då nyttan för en felklassificerad vuxen och prevalensen varieras från 0 till 1 i skalsteg om 0.01, vilket ger upphov till 10 201 kombinationer för varje metod (9 st) och nyttofunktioner (2 st), vilket ger upphov till 183 618 olika resultat. Beräkningen tar här 36 sekunder att utföra.
+Beräkning av samtliga förväntade nyttor då nyttan för en felklassificerad vuxen och prevalensen varieras från 0 till 1 i skalsteg om 0.01, vilket ger upphov till 10 201 kombinationer för varje metod (9 st) och nyttofunktioner (2 st), vilket ger upphov till 183 618 olika resultat. Beräkningarna tar här ungefär en halv minut att utföra.
 
 ``` r
 system.time(resultat <- eu_all_comb(by = 0.01))
