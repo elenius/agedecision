@@ -1,5 +1,5 @@
 ---
-title: "Bilaga: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen"
+title: "Bilaga:  Beslutsanalys av medicinska åldersbedömningar inom asylprocessen"
 author: "Mikael Elenius"
 date: "`r Sys.Date()`"
 output: rmarkdown::github_document
@@ -15,13 +15,13 @@ editor_options:
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = ""
 )
 ```
 
 # Introduktion
 
-Detta R-paket utgör en bilaga till uppsatsen *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen* (2018).
+Detta R-paket utgör en bilaga till uppsatsen [M. Elenius (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://www.diva-portal.org/)
 
 # Installation
 
@@ -108,23 +108,25 @@ Se dokumentationen för dataset och funktioner med hjälp av `?`
 
 # Exempel regressionsanalys
 
-Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled.
+Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `?logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled. Se också [data-raw/datasets.R](data-raw/datasets.R) där datainläsning och regressionsanalyser görs för samtliga metoder.
 
 ```{r logreg}
 # Visdomstand
 mod.tand <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
                 data = tand)
-summary(mod.tand)
+coef(mod.tand)
 
 # Knäled
 mod.kna <- glm(formula = cbind(moget, omoget) ~ age, family = binomial,
                 data = kna)
-summary(mod.kna)
+coef(mod.kna)
 
 ```
 
 
 # Referens
+
+Om du använder programkoden, ange gärna nedanstående referens:
 
 ```{r referens}
 citation("agedecision")
