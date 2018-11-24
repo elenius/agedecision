@@ -11,7 +11,7 @@
   \item{sd_ba}{Standardavvikelsen för justerad benålder givet faktiskt ålder.}...
 }}
 \usage{
-data(hand)
+hand
 }
 \description{
 Data för handled

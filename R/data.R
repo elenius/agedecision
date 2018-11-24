@@ -2,7 +2,6 @@
 #'
 #' @name hand
 #' @docType data
-#' @usage data(hand)
 #'
 #' @format data.frame med 3 kolumner och 6 rader.
 #' \describe{
