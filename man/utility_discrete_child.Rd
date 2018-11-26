@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility_models.R
 \name{utility_discrete_child}
 \alias{utility_discrete_child}
-\title{Diskret nyttomodell då utfallet är omogen/barn $u_D^O(x)$}
+\title{Diskret nyttomodell då utfallet är omogen/barn}
 \usage{
 utility_discrete_child(x, lowest.utility = 0)
 }

@@ -28,7 +28,7 @@ utility_linear_child <- function(x, zero.limit = 21, lowest.utility = 0) {
   res
 }
 
-#' @title Diskret nyttomodell då utfallet är omogen/barn $u_D^O(x)$
+#' @title Diskret nyttomodell då utfallet är omogen/barn
 #' @description  Se ekvation 4.
 #' @param x Ålder.
 #' @param lowest.utility Den lägsta nyttan då em vuxen klassificeras som ett barn. Förvalt är 0.
