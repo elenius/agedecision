@@ -1,7 +1,7 @@
 Bilaga: agedecision
 ================
 Mikael Elenius
-2018-11-24
+2018-11-26
 
 Introduktion
 ============
@@ -148,7 +148,7 @@ Se dokumentationen för dataset och funktioner med hjälp av `?`
 Exempel regressionsanalys
 =========================
 
-Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `?logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled. Se också [data-raw/datasets.R](data-raw/datasets.R) där datainläsning och regressionsanalyser görs för samtliga metoder.
+Resultatet av de regressionsanalyser som utförts ges av regressionskoefficienterna i datasetet `?logcoef` och av sannolikhetsfunktionerna `?pM`. Här visas exempel på hur regressionen går till för visdomstand och knäled. Se också [data-raw/datasets.R](https://github.com/elenius/agedecision/data-raw/datasets.R) där datainläsning och regressionsanalyser görs för samtliga metoder.
 
 ``` r
 # Visdomstand (Simonsson m. fl. (2017))
