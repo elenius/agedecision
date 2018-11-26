@@ -9,7 +9,7 @@ utility_discrete_child(x, lowest.utility = 0)
 \arguments{
 \item{x}{Ålder.}
 
-\item{lowest.utility}{Den lägsta nyttan då em vuxen klassificeras som ett barn. Förvalt är 0. Betecknas i uppsatsen $u_{VO}$.}
+\item{lowest.utility}{Den lägsta nyttan då em vuxen klassificeras som ett barn. Förvalt är 0.}
 }
 \description{
 Se ekvation 4.
