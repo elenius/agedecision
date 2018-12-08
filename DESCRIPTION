@@ -1,7 +1,7 @@
 Package: agedecision
 Type: Package
 Title: Bilaga: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("Mikael", "Elenius", email = "mikael.elenius@gmail.com", role = c("aut", "cre"))
 Description: Beräkningar av resultat som ges i uppsatsen: Beslutsanalys av medicinska åldersbedömningar inom asylprocessen
 Depends: R (>= 3.5.0)
@@ -9,4 +9,4 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
-URL: http://elenius.github.io/agedecision/, https://github.com/elenius/agedecision, http://www.diva-portal.org/
+URL: http://elenius.github.io/agedecision/, https://github.com/elenius/agedecision, http://urn.kb.se/resolve?urn=urn:nbn:se:hig:diva-28782

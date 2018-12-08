@@ -11,9 +11,9 @@ logistic_function <- function(x, intercept, slope) {
 
 
 #' @name pM
-#' @family Sannolikhetsfunktioner $p_i^M(x)$
+#' @family Sannolikhetsfunktioner
 #' @title Sannolikhetsfunktioner från studieresultaten.
-#' @description Funktioner från studieresultaten $p_i^M(x)$, endast ålder (x) i år anges.
+#' @description Funktioner från studieresultaten, endast ålder (x) i år anges.
 #' @param x Ålder.
 #' @seealso \link{logistic_function}
 #' @seealso \link{RMV}

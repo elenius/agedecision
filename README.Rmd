@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 Detta R-paket utgör en bilaga till uppsatsen:
 
-[M. Elenius (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://www.diva-portal.org/)
+[Elenius, M. (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://urn.kb.se/resolve?urn=urn:nbn:se:hig:diva-28782)
 
 # Installation
 

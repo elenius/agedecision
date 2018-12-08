@@ -1,14 +1,14 @@
 Bilaga: agedecision
 ================
 Mikael Elenius
-2018-11-26
+2018-12-08
 
 Introduktion
 ============
 
 Detta R-paket utgör en bilaga till uppsatsen:
 
-[M. Elenius (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://www.diva-portal.org/)
+[Elenius, M. (2018). *Beslutsanalys av medicinska åldersbedömningar inom asylprocessen*.](http://urn.kb.se/resolve?urn=urn:nbn:se:hig:diva-28782)
 
 Installation
 ============
@@ -172,9 +172,10 @@ Om du använder programkoden, ange gärna nedanstående referens:
 ``` r
 citation("agedecision")
 
-  Mikael Elenius (2018). Beslutsanalys av medicinska
+  Elenius, Mikael (2018). Beslutsanalys av medicinska
   åldersbedömningar inom asylprocessen. Magisteruppsats i Beslut-,
   risk- och policyanalys. Högskolan i Gävle.
+  http://urn.kb.se/resolve?urn=urn:nbn:se:hig:diva-28782
 
 A BibTeX entry for LaTeX users is
 
@@ -183,6 +184,6 @@ A BibTeX entry for LaTeX users is
     author = {Mikael Elenius},
     year = {2018},
     school = {{Högskolan i Gävle}},
-    url = {https://github.com/elenius/agedecision},
+    url = {http://urn.kb.se/resolve?urn=urn:nbn:se:hig:diva-28782},
   }
 ```

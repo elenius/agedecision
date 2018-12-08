@@ -35,11 +35,11 @@ pM_vuxen(x)
 \item{x}{Ålder.}
 }
 \description{
-Funktioner från studieresultaten $p_i^M(x)$, endast ålder (x) i år anges.
+Funktioner från studieresultaten, endast ålder (x) i år anges.
 }
 \seealso{
 \link{logistic_function}
 
 \link{RMV}
 }
-\concept{Sannolikhetsfunktioner $p_i^M(x)$}
+\concept{Sannolikhetsfunktioner}
